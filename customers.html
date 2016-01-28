@@ -17,7 +17,7 @@
               <input type="text" class="form-control" id="name" placeholder="For example: Joe Doe" data-ng-model="name">
               <br/>
               <ul>
-                <li data-ng-repeat="cust in customers">{{ cust.name }} - {{ cust.city }}</li>
+                <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'">{{ cust.name | lowercase}} - {{ cust.city | uppercase}}</li>
               </ul>
             </div>
             <button type="submit" class="btn">Submit</button>
