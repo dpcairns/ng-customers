@@ -8,7 +8,7 @@
       <script src="js/scripts.js"></script>
       <title>Using AngularJS</title>
     </head>
-    <body data-ng-init="names=['John Smith', 'John Doe', 'Jane Doe']">
+    <body data-ng-init="customers=[{name:'John Smith',city: 'Phoenix'}, {name:'John Doe',city: 'NYC'},{name: 'Jane Doe',city: 'San Fran'}]">
       <div class="col-md-6">
           <h2>Narrow the list to input</h2>
           <form id="formName">
@@ -17,7 +17,7 @@
               <input type="text" class="form-control" id="name" placeholder="For example: Joe Doe" data-ng-model="name">
               <br/>
               <ul>
-                <li data-ng-repeat="personName in names">{{ personName }}</li>
+                <li data-ng-repeat="cust in customers">{{ cust.name }} - {{ cust.city }}</li>
               </ul>
             </div>
             <button type="submit" class="btn">Submit</button>
